@@ -1,0 +1,18 @@
+.required {
+  font-weight: bold;
+}
+
+.nav {
+  margin-left: 0;
+  margin-bottom: 20px;
+  list-style: none;
+  bottom: -40px;
+}
+
+.navbar .brand {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 0 0 -5px;
+  width: 340px;
+  height: 60px;
+}

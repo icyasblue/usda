@@ -1,0 +1,62 @@
+<div class="container" data-spy="scroll" data-target=".bs-docs-sidenav">
+  <div class="row">
+    <ul class="breadcrumb">
+      <li>Projects</li>
+      <li class="active">{{proc}}</li>
+    </ul>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Owner</th><th>Summary</th><th>Estimation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="info" ng-repeat="commit in cc" ng-click="openModal(commit)" ng-show="isEmpty(commit)">
+        <td>{{commit.owner_name}}</td><td>{{commit.subject}}</td><td>{{commit.cost}}</td>
+      </tr>
+      <tr ng-repeat="commit in commits" ng-click="openModal(commit)">
+        <td>{{commit.owner_name}}</td><td>{{commit.subject}}</td><td>{{commit.cost}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+      <button type="button" class="close" ng-click="cancel()">×</button>
+      <h3 class="modal-title">Commit detail</h3>
+    </div>
+    <table class="table table-hover">
+      <tbody>
+        <tr>
+          <td>Project</td><td>{{currentCommit.project}}</td>
+        </tr>
+        <tr>
+        <td>Change Id</td><td>{{currentCommit.change_id}}</td>
+        </tr>
+        <tr>
+        <td>Summary</td><td>{{currentCommit.subject}}</td>
+        </tr>
+        <tr>
+        <td>Owner</td><td>{{currentCommit.owner_name}}</td>
+        </tr>
+        <tr>
+        <td>What changed</td><td>{{currentCommit.wc}}</td>
+        </tr>
+        <tr>
+        <td>Will Take(sec)</td><td>{{currentCommit.cost}}</td>
+        </tr>
+        <tr>
+        <td>url</td><td><a href="{{currentCommit.url}}" target="_blank">{{currentCommit.url}}</a></td>
+        </tr>
+        <<tr>
+          <<td>Boosted?</td><td>{{currentCommit.priority == 1 ? 'True' : 'False'}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-show="canBoost()" ng-click="boost()">BOOST!</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</script>

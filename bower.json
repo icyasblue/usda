@@ -1,0 +1,29 @@
+{
+  "name": "usda",
+  "version": "2.0.0",
+  "authors": [
+    "angelo@adap.tv"
+  ],
+  "description": "USDA verifies your code",
+  "main": "index.html",
+
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "jquery": "~2.1.0",
+    "angular": "1.2.26",
+    "angular-mocks": "~1.2.x",
+    "angular-route": "~1.2.x",
+    "angular-sanitize": "~1.2.21",
+    "angular-bootstrap": "*",
+    "adapt-strap": "*"
+  }
+}

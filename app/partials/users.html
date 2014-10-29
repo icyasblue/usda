@@ -1,0 +1,14 @@
+<div class="container" data-spy="scroll" data-target=".bs-docs-sidenav">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>User</th><th>Boost left</th><th>Last Boosted Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in users">
+        <td>{{user.name}}</td><td>{{user.boost_left}}</td><td>{{user.last_boost_date}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
