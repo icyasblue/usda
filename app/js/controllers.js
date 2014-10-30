@@ -85,9 +85,9 @@ function CtrlUsers($scope, $http) {
 function CtrlRanks($scope, $http) {
   $scope.merged = {
     all: [],
-    primeribs: [],
-    steak: [],
-    salmon: []
+    repo1: [],
+    repo2: [],
+    repo3: []
   };
   $scope.mergedTableDef = [
     {
@@ -103,24 +103,24 @@ function CtrlRanks($scope, $http) {
   success(function (result) {
     $scope.merged.all = result;
   });
-  $http.get('/rank/merged/primeribs/7').
+  $http.get('/rank/merged/repo1/7').
   success(function (result) {
-    $scope.merged.primeribs = result;
+    $scope.merged.repo1 = result;
   });
-  $http.get('/rank/merged/steak/7').
+  $http.get('/rank/merged/repo2/7').
   success(function (result) {
-    $scope.merged.steak = result;
+    $scope.merged.repo2 = result;
   });
-  $http.get('/rank/merged/salmon/7').
+  $http.get('/rank/merged/repo3/7').
   success(function (result) {
-    $scope.merged.salmon = result;
+    $scope.merged.repo3 = result;
   });
 
   $scope.reviewed = {
     all: [],
-    primeribs: [],
-    steak: [],
-    salmon: []
+    repo1: [],
+    repo2: [],
+    repo3: []
   }
   $scope.reviewedTableDef = [
     {
@@ -136,16 +136,16 @@ function CtrlRanks($scope, $http) {
   success(function (result) {
     $scope.reviewed.all = result;
   });
-  $http.get('/rank/reviews/primeribs/7/all').
+  $http.get('/rank/reviews/repo1/7/all').
   success(function (result) {
-    $scope.reviewed.primeribs = result;
+    $scope.reviewed.repo1 = result;
   });
-  $http.get('/rank/reviews/steak/7/all').
+  $http.get('/rank/reviews/repo2/7/all').
   success(function (result) {
-    $scope.reviewed.steak = result;
+    $scope.reviewed.repo2 = result;
   });
-  $http.get('/rank/reviews/salmon/7/all').
+  $http.get('/rank/reviews/repo3/7/all').
   success(function (result) {
-    $scope.reviewed.salmon = result;
+    $scope.reviewed.repo3 = result;
   });
 }
